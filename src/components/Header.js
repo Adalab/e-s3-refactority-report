@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import coolCard from '../images/tarjetas-molonas.svg';
 
 
-
 class Header extends Component {
     render() {
         return (
