@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo-adalab-80px.png';
-import coolCard from './tarjetas-molonas.svg';
+import Header from './components/Header';
+import Footer from './components/Footer';
 //import 'core/_variables.scss';
 import './App.scss';
 
@@ -11,13 +11,7 @@ class App extends Component {
       <body>
         <div className="page">
             <div className="page__home-container">
-                <header className="page__header--cards">
-                     <h1 className="header__title--cards hidden"> Awesome profile-cards</h1>
- <a href="index.html">
-        <img src={coolCard} alt="logo" className="header__logo--cards"/>
-    </a>
-
-                </header>
+               <Header />
                 <main className="main__container">
                     <div className="cards--form__container">
                         <section className="main__preview">
@@ -199,14 +193,7 @@ class App extends Component {
                     </div>
                 </main>
             </div>
-            <footer className="page__footer">
-                <div className="footer__container">
-                    <p className="footer__text">Awesome profile-cards @2018</p> <a href="https://adalab.es/">
-            <img src={logo} alt="Logo Adalab" className="footer__logo"/>
-        </a>
-
-                </div>
-            </footer>
+            <Footer />
         </div>
         <script type="text/javascript" src="assets/js/main.min.js"></script>
     </body>
