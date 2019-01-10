@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import Design from './Design';
-import Fill from './Fill';
-import Share from './Share';
+import Header from './Header';
+import MainCreator from './MainCreator';
+import Footer from './Footer';
+
 
 
 class Creator extends Component {
     render() {
         return(
-            <Design />
-            <Fill />
-            <Share />
+            <React.Fragment>
+                <Header />
+                <MainCreator />
+                <Footer />
+            </React.Fragment>
         );
     }
 }
