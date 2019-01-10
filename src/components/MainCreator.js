@@ -15,7 +15,7 @@ class MainCreator extends Component {
                     <form className="main__form">
                         <Design />
                         <div className="border-section border-section-nomargin"></div>
-                        <Fill />
+                        <Fill arraySkills={this.props.arraySkills}/>
                         <div className="border-section border-section-nomargin"></div>
                         <Share />
                     </form>

@@ -22,7 +22,7 @@ class Fill extends Component {
                     <NameJob />
                     <Image />
                     <Rrss />
-                    <Skills />
+                    <Skills arraySkills={this.props.arraySkills}/>
                 </div>
             </fieldset>
         );

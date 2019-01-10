@@ -7,11 +7,19 @@ import Creator from './components/Creator';
 //import 'core/_variables.scss';
 import './App.scss';
 
+const arraySkills = ['html', 'css', 'javascript'];
 
 class App extends Component {
+
+  constructor (props){
+    super(props);
+    this.props = {arraySkills};
+  }
+
+
   render() {
     return (
-          <Creator />
+          <Creator arraySkills={arraySkills}/>
     );
   }
 }
