@@ -2,13 +2,14 @@ import React, { Component} from 'react';
 
 class Card extends Component {
     render(){
+        const {card} = this.props;
         return(
             <div className="preview__card">
                 <div className="preview__title">
                     <div className="preview__decoration-rectangle preview__decoration-rectangle--green"></div>
                     <div className="preview__texts">
-                        <p className="font-comic-sans preview__name preview__name--green">Nombre Apellido</p>
-                        <p className="font-comic-sans preview__occupation">Front-end developer</p>
+                        <p className="font-comic-sans preview__name preview__name--green">{card.name}</p>
+                        <p className="font-comic-sans preview__occupation">{card.job}</p>
                     </div>
                 </div>
                 <div className="preview__image"></div>

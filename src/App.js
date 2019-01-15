@@ -9,16 +9,28 @@ class App extends Component {
     super(props);
     
     this.state = {
-      
-    arraySkills : ['html', 'css', 'javascript']
-    };
-    
+    arraySkills : ['html', 'css', 'javascript'],
+    card: {
+      name: 'Paula',
+      job: 'front'
+    }
+    }; 
+    this.handleName = this.handleName.bind(this);   
   }
 
+handleName(e) {
+  const name = e.currentTarget.value;
+  const {card} = this.state;
+  this.setState({
+    card: {...card, name: name}
+  });
+}
+
   render() {
+    const {card, arraySkills} = this.state;
 
     return (
-          <Creator arraySkills={this.state.arraySkills}/>
+          <Creator actionName={this.handleName} card={card} arraySkills={arraySkills}/>
     );
   }
 }

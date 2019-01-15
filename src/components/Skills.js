@@ -4,7 +4,7 @@ class Skills extends Component {
     render() {
         const arraySkills = this.props.arraySkills.map((skill, index) => {
             return (
-                <li>{skill}</li>
+                <li key={index}>{skill}</li>
             );
         }
     )

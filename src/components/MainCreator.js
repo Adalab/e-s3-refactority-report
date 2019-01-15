@@ -8,14 +8,16 @@ import Preview from './Preview';
 
 class MainCreator extends Component {
     render() {
+        const {card, arraySkills, actionName} = this.props;
+
         return (
             <main className="main__container">
                 <div className="cards--form__container">
-                   <Preview />
+                   <Preview card={card}/>
                     <form className="main__form">
                         <Design />
                         <div className="border-section border-section-nomargin"></div>
-                        <Fill arraySkills={this.props.arraySkills}/>
+                        <Fill actionName={actionName} arraySkills={arraySkills}/>
                         <div className="border-section border-section-nomargin"></div>
                         <Share />
                     </form>

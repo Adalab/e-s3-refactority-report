@@ -7,9 +7,9 @@ class Colors extends Component {
                 <p className="main__design--titles">colores</p>
                     <ul className="main__design--colors">
                         <li className="main__design--items">
-                            <label for="color-green" className="main__design--palette">
+                            <label htmlFor="color-green" className="main__design--palette">
                                 <div className="main__design--input">
-                                    <input checked="checked" className="option-button" id="color-green" type="radio"
+                                    <input defaultChecked="checked" className="option-button" id="color-green" type="radio"
                                         value="green-palette" name="color-selection" />
                                 </div>
                                 <div className="main__design--palette-green">
@@ -20,7 +20,7 @@ class Colors extends Component {
                             </label>
                         </li>
                         <li className="main__design--items">
-                            <label for="color-red" className="main__design--palette">
+                            <label htmlFor="color-red" className="main__design--palette">
                                 <div className="main__design--input">
                                     <input className="option-button" id="color-red" type="radio" value="red-palette"
                                         name="color-selection" />
@@ -33,7 +33,7 @@ class Colors extends Component {
                             </label>
                         </li>
                         <li className="main__design--items">
-                            <label for="color-grey" className="main__design--palette">
+                            <label htmlFor="color-grey" className="main__design--palette">
                                 <div className="main__design--input">
                                     <input className="option-button" id="color-grey" type="radio" value="grey-palette"
                                         name="color-selection" />
