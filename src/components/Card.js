@@ -1,6 +1,24 @@
 import React, { Component} from 'react';
 
 class Card extends Component {
+
+    writeEmailIcon(email) {
+
+        let link;
+        if (email === '') {
+            link = (
+                <li className="social-icon li__email hidden">
+                    <a class="socialicons-style" href={`mailto:${email}`}><span class="far fa-envelope"></span></a>
+                </li>);
+        } else {
+            link = (
+                <li className="social-icon li__email">
+                    <a class="socialicons-style" href={`mailto:${email}`}><span class="far fa-envelope"></span></a>
+                </li>);
+        }
+        
+        return link;
+    }
     render(){
         const {card} = this.props;
         return(
@@ -14,7 +32,7 @@ class Card extends Component {
                 </div>
                 <div className="preview__image"></div>
                 <ul className="icons__container social__container--green preview__social-icons">
-                    <li className="social-icon li__email hidden"></li>
+                    {this.writeEmailIcon(card.email)}
                     <li className="social-icon li__phone hidden"></li>
                     <li className="social-icon li__linkedin hidden"></li>
                     <li className="social-icon li__github hidden"></li>

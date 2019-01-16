@@ -12,11 +12,14 @@ class App extends Component {
     arraySkills : ['html', 'css', 'javascript'],
     card: {
       name: 'Nombre Apellido',
-      job: 'front-end developer'
+      job: 'front-end developer',
+      email: ''
     }
     }; 
     this.handleName = this.handleName.bind(this);  
-    this.handleJob = this.handleJob.bind(this);   
+    this.handleJob = this.handleJob.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);   
+
 
   }
 
@@ -36,11 +39,19 @@ handleJob(e) {
   });
 }
 
+handleEmail(e) {
+  const email = e.currentTarget.value;
+  const {card} = this.state;
+  this.setState({
+    card: {...card, email: email }
+  });
+}
+
   render() {
     const {card, arraySkills} = this.state;
 
     return (
-          <Creator actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills}/>
+          <Creator actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail}/>
     );
   }
 }

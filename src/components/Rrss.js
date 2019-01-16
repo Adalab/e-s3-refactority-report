@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 class Rrss extends Component {
     render() {
+        const {actionEmail} = this.props;
         return (
             <React.Fragment>
                 <label htmlFor="email">Email</label>
-                    <input className="input-container" placeholder="Ej: PaquitaR@gmail.com"
-                        id="email" type="email" name="email" />
+                    <input className="input-container" placeholder="Ej: PaquitaR@gmail.com" onKeyUp={actionEmail}
+                        id="email" type="email" name="email"/>
                     <label htmlFor="phone">Teléfono</label>
                     <input className="input-container" placeholder="Ej: 666-55-44-33"
                         id="phone" type="number" name="phone" />
