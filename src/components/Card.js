@@ -12,7 +12,7 @@ class Card extends Component {
                         <p className="font-comic-sans preview__occupation">{card.job}</p>
                     </div>
                 </div>
-                <div className="preview__image"></div>
+                <div className="preview__image" style={{backgroundImage: `url(${card.image})`}}></div>
                 <ul className="icons__container social__container--green preview__social-icons">
                     <li className="social-icon li__email hidden"></li>
                     <li className="social-icon li__phone hidden"></li>

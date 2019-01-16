@@ -26,6 +26,7 @@ class Image extends Component {
         this.props.handleUrl(url);
     }
     render() {
+        const {card} = this.props;
         return (
             <React.Fragment>
                 <label className="upload-image-label" htmlFor="upload-image">Añadir imagen</label>
@@ -33,7 +34,7 @@ class Image extends Component {
                     type="file" name="upload-image" ref={this.fileInput} onChange={this.handleFileChange} />
                 <div className="upload-image__container">
                     <button type="button" className="fake__upload-image" onClick={this.fakeClick}>Añadir imagen</button>
-                    <div className="fake__check-upload-image" style={{ backgroundImage: `url(${this.fileUrl})` }}></div>
+                    <div className="fake__check-upload-image" style={{backgroundImage: `url(${card.image})`}}></div>
                 </div>
             </React.Fragment>
         );

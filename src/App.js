@@ -13,13 +13,13 @@ class App extends Component {
     card: {
       name: 'Nombre Apellido',
       job: 'front-end developer',
-      image: "https://placehold.it/200x200"
+      image: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT"
       }
     }; 
     this.handleName = this.handleName.bind(this);  
     this.handleJob = this.handleJob.bind(this);
+    this.handleUrl = this.handleUrl.bind(this);
 }
-
 
 handleName(e) {
   const name = e.currentTarget.value;
@@ -36,9 +36,9 @@ handleJob(e) {
   });
 }
 handleUrl(url) {
-  const cardState = this.state.card;
+  const {card} = this.state;
   this.setState({
-    ...cardState, image: url
+    card:{...card, image: url}
   });
 }
 
