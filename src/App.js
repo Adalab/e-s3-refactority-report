@@ -11,18 +11,28 @@ class App extends Component {
     this.state = {
     arraySkills : ['html', 'css', 'javascript'],
     card: {
-      name: 'Paula',
-      job: 'front'
+      name: 'Nombre Apellido',
+      job: 'front-end developer'
     }
     }; 
-    this.handleName = this.handleName.bind(this);   
+    this.handleName = this.handleName.bind(this);  
+    this.handleJob = this.handleJob.bind(this);   
+
   }
 
 handleName(e) {
   const name = e.currentTarget.value;
   const {card} = this.state;
   this.setState({
-    card: {...card, name: name}
+    card: {...card, name: name }
+  });
+}
+
+handleJob(e) {
+  const job = e.currentTarget.value;
+  const {card} = this.state;
+  this.setState({
+    card: {...card, job: job }
   });
 }
 
@@ -30,7 +40,7 @@ handleName(e) {
     const {card, arraySkills} = this.state;
 
     return (
-          <Creator actionName={this.handleName} card={card} arraySkills={arraySkills}/>
+          <Creator actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills}/>
     );
   }
 }

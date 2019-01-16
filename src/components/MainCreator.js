@@ -8,7 +8,7 @@ import Preview from './Preview';
 
 class MainCreator extends Component {
     render() {
-        const {card, arraySkills, actionName} = this.props;
+        const {card, arraySkills, actionName, actionJob} = this.props;
 
         return (
             <main className="main__container">
@@ -17,7 +17,7 @@ class MainCreator extends Component {
                     <form className="main__form">
                         <Design />
                         <div className="border-section border-section-nomargin"></div>
-                        <Fill actionName={actionName} arraySkills={arraySkills}/>
+                        <Fill actionName={actionName} actionJob={actionJob} arraySkills={arraySkills}/>
                         <div className="border-section border-section-nomargin"></div>
                         <Share />
                     </form>
