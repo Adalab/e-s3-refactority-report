@@ -27,12 +27,13 @@ class Image extends Component {
     }
     getDefaultImage(par){
 
-        return (par)? {backgroundImage: `url()`} : {backgroundImage: `url(${this.props.card.image})`};
-        // if(par){
-        //     return {backgroundImage: `url()`}
-        // } else {
-        //     return {backgroundImage: `url(${this.props.card.image})`}
-        // }
+        // return (par)? {backgroundImage: `url()`} : {backgroundImage: `url(${this.props.card.image})`};
+
+        if(par){
+            return {backgroundImage: `url()`}
+        } else {
+            return {backgroundImage: `url(${this.props.card.image})`}
+        }
     }
     render() {
         
