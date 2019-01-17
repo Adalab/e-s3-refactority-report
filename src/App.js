@@ -16,7 +16,8 @@ class App extends Component {
       email: '',
       tel:'',
       linkedin:'',
-      git:''
+      git:'',
+      typography: 2
     }
     }; 
     this.handleName = this.handleName.bind(this);  
@@ -24,7 +25,9 @@ class App extends Component {
     this.handleEmail = this.handleEmail.bind(this);
     this.handleTel = this.handleTel.bind(this);
     this.handleLinkedin = this.handleLinkedin.bind(this);
-    this.handleGit = this.handleGit.bind(this);   
+    this.handleGit = this.handleGit.bind(this);
+    this.handleTypo = this.handleTypo.bind(this);   
+ 
 
   }
 
@@ -76,11 +79,20 @@ handleGit(e) {
   });
 }
 
+handleTypo(e){
+  console.log('hola');
+  const typo = parseInt(e.currentTarget.value);
+  const {card} = this.state;
+  this.setState({
+    card: {...card, typography: typo }
+  });
+}
+
   render() {
     const {card, arraySkills} = this.state;
 
     return (
-          <Creator actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit}/>
+          <Creator actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} actionTypo={this.handleTypo}/>
     );
   }
 }

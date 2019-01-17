@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 
+const fonts = [,'font-ubuntu', 'font-comic-sans', 'font-montserrat'];
 class Card extends Component {
 
     writeEmailIcon(email) {
@@ -62,12 +63,12 @@ class Card extends Component {
         if (git === '') {
             link = (
                 <li className="social-icon git hidden">
-                    <a className="socialicons-style" href={`https://www.linkedin.com/in/:${git}`}><span class="fab fa-github-alt"></span></a>
+                    <a className="socialicons-style" href={`https://www.linkedin.com/in/:${git}`}><span className="fab fa-github-alt"></span></a>
                 </li>);
         } else {
             link = (
                 <li className="social-icon git">
-                    <a className="socialicons-style" href={`https://www.linkedin.com/in/:${git}`}><span class="fab fa-github-alt"></span></a>
+                    <a className="socialicons-style" href={`https://www.linkedin.com/in/:${git}`}><span className="fab fa-github-alt"></span></a>
                 </li>);
         }
         
@@ -81,8 +82,8 @@ class Card extends Component {
                 <div className="preview__title">
                     <div className="preview__decoration-rectangle preview__decoration-rectangle--green"></div>
                     <div className="preview__texts">
-                        <p className="font-comic-sans preview__name preview__name--green">{card.name}</p>
-                        <p className="font-comic-sans preview__occupation">{card.job}</p>
+                        <p className={`${fonts[card.typography]} preview__occupation`}>{card.name}</p>
+                        <p className={`${fonts[card.typography]} preview__occupation`}>{card.job}</p>
                     </div>
                 </div>
                 <div className="preview__image"></div>
