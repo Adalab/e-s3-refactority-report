@@ -80,7 +80,6 @@ handleGit(e) {
 }
 
 handleTypo(e){
-  console.log('hola');
   const typo = parseInt(e.currentTarget.value);
   const {card} = this.state;
   this.setState({

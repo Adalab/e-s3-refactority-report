@@ -14,8 +14,8 @@ class MainCreator extends Component {
             <main className="main__container">
                 <div className="cards--form__container">
                    <Preview card={card}/>
-                    <form className="main__form">
-                        <Design actionTypo={actionTypo} />
+                    <form className="main__form"> 
+                        <Design actionTypo={actionTypo} card={card} />
                         <div className="border-section border-section-nomargin"></div>
                         <Fill actionName={actionName} actionJob={actionJob} arraySkills={arraySkills} actionEmail={actionEmail} actionTel={actionTel} actionLinkedin={actionLinkedin} actionGit={actionGit} />
                         <div className="border-section border-section-nomargin"></div>

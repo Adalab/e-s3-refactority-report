@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 
-const fonts = [,'font-ubuntu', 'font-comic-sans', 'font-montserrat'];
+const fonts = ['','font-ubuntu', 'font-comic-sans', 'font-montserrat'];
 class Card extends Component {
 
     writeEmailIcon(email) {
