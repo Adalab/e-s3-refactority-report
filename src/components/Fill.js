@@ -6,7 +6,7 @@ import Skills from './Skills';
 
 class Fill extends Component {
     render() {
-        const {card, arraySkills, actionName, actionJob, handleUrl} = this.props;
+        const {card, arraySkills, actionName, actionJob, handleUrl, imageDefault} = this.props;
         return (
             <fieldset className="main__collapsable main__fill">
                 <div className="dropdown dropdown__fill">
@@ -21,7 +21,7 @@ class Fill extends Component {
                 </div>
                 <div className="main__fill--container hidden">
                     <NameJob actionName={actionName} actionJob={actionJob} />
-                    <Image handleUrl={handleUrl} card={card} />
+                    <Image handleUrl={handleUrl} card={card} imageDefault={imageDefault} />
                     <Rrss />
                     <Skills arraySkills={arraySkills} />
                 </div>

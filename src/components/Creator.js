@@ -5,12 +5,12 @@ import Footer from './Footer';
 
 class Creator extends Component {
     render() {
-    const {card, arraySkills, actionName, actionJob, handleUrl} = this.props;
+    const {card, arraySkills, actionName, actionJob, handleUrl, imageDefault} = this.props;
 
         return(
             <React.Fragment>
                 <Header />
-                <MainCreator actionName={actionName} actionJob={actionJob} handleUrl={handleUrl} arraySkills={arraySkills} card={card}/>
+                <MainCreator imageDefault={imageDefault} actionName={actionName} actionJob={actionJob} handleUrl={handleUrl} arraySkills={arraySkills} card={card}/>
                 <Footer />
             </React.Fragment>
         );

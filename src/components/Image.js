@@ -25,8 +25,17 @@ class Image extends Component {
         const url = fr.result;
         this.props.handleUrl(url);
     }
+    getDefaultImage(par){
+
+        return (par)? {backgroundImage: `url()`} : {backgroundImage: `url(${this.props.card.image})`};
+        // if(par){
+        //     return {backgroundImage: `url()`}
+        // } else {
+        //     return {backgroundImage: `url(${this.props.card.image})`}
+        // }
+    }
     render() {
-        const {card} = this.props;
+        
         return (
             <React.Fragment>
                 <label className="upload-image-label" htmlFor="upload-image">Añadir imagen</label>
@@ -34,7 +43,7 @@ class Image extends Component {
                     type="file" name="upload-image" ref={this.fileInput} onChange={this.handleFileChange} />
                 <div className="upload-image__container">
                     <button type="button" className="fake__upload-image" onClick={this.fakeClick}>Añadir imagen</button>
-                    <div className="fake__check-upload-image" style={{backgroundImage: `url(${card.image})`}}></div>
+                    <div className="fake__check-upload-image" style={this.getDefaultImage(this.props.imageDefault)}></div>
                 </div>
             </React.Fragment>
         );
