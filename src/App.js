@@ -13,14 +13,17 @@ class App extends Component {
     card: {
       name: 'Nombre Apellido',
       job: 'front-end developer',
+      image: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT",
       email: '',
       tel:'',
       linkedin:'',
       git:''
-    }
+    },
+    imageDefault: true
     }; 
     this.handleName = this.handleName.bind(this);  
     this.handleJob = this.handleJob.bind(this);
+    this.handleUrl = this.handleUrl.bind(this);
     this.handleEmail = this.handleEmail.bind(this);
     this.handleTel = this.handleTel.bind(this);
     this.handleLinkedin = this.handleLinkedin.bind(this);
@@ -35,12 +38,18 @@ handleName(e) {
     card: {...card, name: name }
   });
 }
-
 handleJob(e) {
   const job = e.currentTarget.value;
   const {card} = this.state;
   this.setState({
     card: {...card, job: job }
+  });
+}
+handleUrl(url) {
+  const {card} = this.state;
+  this.setState({
+    card:{...card, image: url},
+    imageDefault: false
   });
 }
 
@@ -77,10 +86,10 @@ handleGit(e) {
 }
 
   render() {
-    const {card, arraySkills} = this.state;
+    const {card, arraySkills, imageDefault} = this.state;
 
     return (
-          <Creator actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit}/>
+          <Creator actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl}/>
     );
   }
 }
