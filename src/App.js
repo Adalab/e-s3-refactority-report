@@ -17,7 +17,8 @@ class App extends Component {
       email: '',
       tel:'',
       linkedin:'',
-      git:''
+      git:'',
+      typography: 2
     },
     imageDefault: true
     }; 
@@ -27,7 +28,9 @@ class App extends Component {
     this.handleEmail = this.handleEmail.bind(this);
     this.handleTel = this.handleTel.bind(this);
     this.handleLinkedin = this.handleLinkedin.bind(this);
-    this.handleGit = this.handleGit.bind(this);   
+    this.handleGit = this.handleGit.bind(this);
+    this.handleTypo = this.handleTypo.bind(this);   
+ 
 
   }
 
@@ -85,11 +88,19 @@ handleGit(e) {
   });
 }
 
+handleTypo(e){
+  const typo = parseInt(e.currentTarget.value);
+  const {card} = this.state;
+  this.setState({
+    card: {...card, typography: typo }
+  });
+}
+
   render() {
     const {card, arraySkills, imageDefault} = this.state;
 
     return (
-          <Creator actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl}/>
+          <Creator actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo}/>
     );
   }
 }
