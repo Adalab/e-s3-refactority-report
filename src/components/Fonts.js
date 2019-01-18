@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Card from './Card';
-
 
 class Fonts extends Component {
     render() {

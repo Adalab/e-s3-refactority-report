@@ -1,9 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Merriweather:400,900%7COpen+Sans");
-
-@import url("https://fonts.googleapis.com/css?family=Merriweather:400,900%7COpen+Sans");
-
-@import url("//db.onlinewebfonts.com/c/51c27e19d1ddfc980316c822d08858c2?family=Comic+Neue");
-
+@import './core/mixins';
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -546,7 +541,9 @@ li,ul {
   width: 30px;
   height: 25px;
   background-color: #a0c0cf;
-}/*fonts starts here*/.ubuntu {
+}
+
+.ubuntu {
   font-family: 'OpenSans', sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -1071,6 +1068,21 @@ li,ul {
   .main__button {
     margin-bottom: 69px;
   }
+
+  .font-ubuntu {
+    @include Text-Style-5();
+    color: black;
+    text-align: left;
 }
 
-/*# sourceMappingURL=main.css.map */
+.font-comic-sans {
+    @include Text-Style-6();
+}
+
+.font-montserrat {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    color: black;
+}
+
+}
