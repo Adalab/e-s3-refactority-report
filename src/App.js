@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Creator from './components/Creator';
 import './App.scss';
+import {fetchSkills} from './services/SkillsService';
 
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
     super(props);
     
     this.state = {
-    arraySkills : ['html', 'css', 'javascript'],
+    arraySkills : ['html', 'css', 'javascript'],//llamar a fetchNewSkills()
     card: {
       name: 'Nombre Apellido',
       job: 'front-end developer',
@@ -28,6 +29,7 @@ class App extends Component {
     this.handleTel = this.handleTel.bind(this);
     this.handleLinkedin = this.handleLinkedin.bind(this);
     this.handleGit = this.handleGit.bind(this);   
+    this.fetchNewSkills = this.fetchNewSkills.bind(this);
 
   }
 
@@ -84,6 +86,17 @@ handleGit(e) {
     card: {...card, git: git }
   });
 }
+
+  fetchNewSkills(){
+    fetchSkills()
+    .then(data=>{
+      console.log(data);
+      this.setState({
+        arraySkills: data.skills})
+    });
+  }
+
+
 
   render() {
     const {card, arraySkills, imageDefault} = this.state;
