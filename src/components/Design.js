@@ -4,7 +4,7 @@ import Fonts from './Fonts';
 
 class Design extends Component {
     render() {
-        const {actionTypo, card} = this.props;
+        const {actionTypo, actionColor, card} = this.props;
         return (
             <fieldset className="main__collapsable main__design">
                 <div className=" dropdown dropdown__design">
@@ -15,7 +15,7 @@ class Design extends Component {
                     </div>
                 </div>
                 <div className="main__design--container hidden">
-                    <Colors />
+                    <Colors palette={card.palette} actionColor={actionColor}/>
                     <Fonts typo={card.typography} actionTypo={actionTypo} />
                 </div>
             </fieldset>
