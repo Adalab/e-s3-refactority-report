@@ -9,20 +9,21 @@ class App extends Component {
     super(props);
     
     this.state = {
-    arraySkills : ['html', 'css', 'javascript'],
-    card: {
-      name: 'Nombre Apellido',
-      job: 'front-end developer',
-      image: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT",
-      email: '',
-      tel:'',
-      linkedin:'',
-      git:'',
-      palette: 1,
-      typography: 2
-    },
-    imageDefault: true
-    }; 
+      arraySkills: ['html', 'css', 'javascript'],
+      card: {
+        name: 'Nombre Apellido',
+        job: 'front-end developer',
+        image: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT",
+        email: '',
+        tel:'',
+        linkedin:'',
+        git:'',
+        palette: 1,
+        typography: 2
+      },
+      imageDefault: true
+    };
+
     this.handleName = this.handleName.bind(this);  
     this.handleJob = this.handleJob.bind(this);
     this.handleUrl = this.handleUrl.bind(this);
