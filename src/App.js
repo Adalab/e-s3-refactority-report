@@ -18,7 +18,8 @@ class App extends Component {
       email: '',
       tel:'',
       linkedin:'',
-      git:''
+      git:'',
+      skills: ["html", "css", "gulp"]
     },
 
     imageDefault: true
@@ -91,16 +92,22 @@ handleGit(e) {
   });
 }
 
-  fetchNewSkills(){
-    fetchSkills()
-    .then(data=>{
-      console.log(data);
-      this.setState({
-        arraySkills: data.skills})
-    });
-  }
+fetchNewSkills(){
+  fetchSkills()
+  .then(data=>{
+    console.log(data);
+    this.setState({
+      arraySkills: data.skills})
+  });
+}
 
-
+handleSkills(e) {
+  const skill = e.currentTarget.value;
+  const {card} = this.state;
+  this.setState({
+    card: {...card, skills: skill }
+  });
+}
 
   render() {
     const {card, arraySkills, imageDefault} = this.state;

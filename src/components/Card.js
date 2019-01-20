@@ -76,6 +76,13 @@ class Card extends Component {
 
     render(){
         const {card} = this.props;
+        const arraySkills = card.skills.map((skill, index) => {
+            return (
+                <li key={index}>
+                    <div>{skill}</div>
+                </li>
+            );})
+
         return(
             <div className="preview__card">
                 <div className="preview__title">
@@ -93,7 +100,9 @@ class Card extends Component {
                     {this.writeGitIcon(card.git)}
                 </ul>
                 <div className="skills__container">
-                    <ul className="icons__container icons__container--green preview__skills-icons"></ul>
+                    <ul className="icons__container icons__container--green preview__skills-icons">
+                        {arraySkills}
+                    </ul>
                 </div>
             </div>
         );
