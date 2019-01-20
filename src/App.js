@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Creator from './components/Creator';
 import './App.scss';
-
+import { Route, Switch} from 'react-router-dom';
+import HomePage from './components/HomePage';
 
 class App extends Component {
   
@@ -100,7 +101,13 @@ handleTypo(e){
     const {card, arraySkills, imageDefault} = this.state;
 
     return (
-          <Creator actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo}/>
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+            <Route path='/creator'
+            render={props => (
+            <Creator match={props.match} actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} />)} 
+          />        
+        </Switch>
     );
   }
 }
