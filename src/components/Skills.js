@@ -11,7 +11,7 @@ class Skills extends Component {
             return (
                 <li key={index}>
                     <label htmlFor={skill} className="option-skills">
-                    <input className="option-button option-skills-button" id={skill} type="checkbox" value={skill} name={skill}/>
+                    <input className="option-button option-skills-button" id={skill} type="checkbox" value={skill} name={skill} onClick={this.props.actionFillS}/>
                     <p className="skills">{skill}</p>
                     </label>
                 </li>

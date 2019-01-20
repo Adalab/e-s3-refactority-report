@@ -10,7 +10,7 @@ class App extends Component {
     super(props);
     
     this.state = {
-    arraySkills : [],//llamar a fetchNewSkills()
+    arraySkills : [],
     card: {
       name: 'Nombre Apellido',
       job: 'front-end developer',
@@ -19,12 +19,13 @@ class App extends Component {
       tel:'',
       linkedin:'',
       git:'',
-      skills: ["html", "css", "gulp"]
+      skills: []
     },
 
     imageDefault: true
 
     }; 
+
     this.handleName = this.handleName.bind(this);  
     this.handleJob = this.handleJob.bind(this);
     this.handleUrl = this.handleUrl.bind(this);
@@ -33,6 +34,7 @@ class App extends Component {
     this.handleLinkedin = this.handleLinkedin.bind(this);
     this.handleGit = this.handleGit.bind(this);   
     this.fetchNewSkills = this.fetchNewSkills.bind(this);
+    this.handleFillSkills = this.handleFillSkills.bind(this);
 
   }
 
@@ -109,11 +111,27 @@ handleSkills(e) {
   });
 }
 
+handleFillSkills (e) {
+  const skill = e.target.value;
+  let skillsSelected = this.state.card.skills;
+
+  if (skillsSelected.length < 3 && e.target.checked === true) {
+    skillsSelected.push(skill)
+  } else { 
+    e.target.checked = false;
+    skillsSelected.splice(skillsSelected.indexOf(skill), 1);
+  }
+
+  this.setState({
+    card: {skills : skillsSelected}
+  })
+}
+
   render() {
     const {card, arraySkills, imageDefault} = this.state;
 
     return (
-          <Creator actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionFetch={this.fetchNewSkills}/>
+          <Creator actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills}/>
     );
   }
 }
