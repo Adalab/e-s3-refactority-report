@@ -113,17 +113,18 @@ handleSkills(e) {
 
 handleFillSkills (e) {
   const skill = e.target.value;
+  const {card} = this.state;
+
   let skillsSelected = this.state.card.skills;
 
   if (skillsSelected.length < 3 && e.target.checked === true) {
     skillsSelected.push(skill)
   } else { 
-    e.target.checked = false;
     skillsSelected.splice(skillsSelected.indexOf(skill), 1);
   }
 
   this.setState({
-    card: {skills : skillsSelected}
+    card: {...card, skills : skillsSelected}
   })
 }
 
