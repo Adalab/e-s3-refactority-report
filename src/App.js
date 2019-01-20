@@ -10,7 +10,7 @@ class App extends Component {
     super(props);
     
     this.state = {
-    arraySkills : ['html', 'css', 'javascript'],//llamar a fetchNewSkills()
+    arraySkills : [],//llamar a fetchNewSkills()
     card: {
       name: 'Nombre Apellido',
       job: 'front-end developer',
@@ -20,7 +20,9 @@ class App extends Component {
       linkedin:'',
       git:''
     },
+
     imageDefault: true
+
     }; 
     this.handleName = this.handleName.bind(this);  
     this.handleJob = this.handleJob.bind(this);
@@ -40,6 +42,7 @@ handleName(e) {
     card: {...card, name: name }
   });
 }
+
 handleJob(e) {
   const job = e.currentTarget.value;
   const {card} = this.state;
@@ -47,6 +50,7 @@ handleJob(e) {
     card: {...card, job: job }
   });
 }
+
 handleUrl(url) {
   const {card} = this.state;
   this.setState({
@@ -102,7 +106,7 @@ handleGit(e) {
     const {card, arraySkills, imageDefault} = this.state;
 
     return (
-          <Creator actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl}/>
+          <Creator actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionFetch={this.fetchNewSkills}/>
     );
   }
 }

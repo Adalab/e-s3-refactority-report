@@ -8,7 +8,7 @@ import Preview from './Preview';
 
 class MainCreator extends Component {
     render() {
-        const {card, arraySkills, actionName, actionJob, actionEmail, actionTel, actionLinkedin, actionGit, handleUrl, imageDefault} = this.props;
+        const {card, arraySkills, actionName, actionJob, actionEmail, actionTel, actionLinkedin, actionGit, handleUrl, imageDefault, actionFetch} = this.props;
 
         return (
             <main className="main__container">
@@ -17,7 +17,7 @@ class MainCreator extends Component {
                     <form className="main__form">
                         <Design />
                         <div className="border-section border-section-nomargin"></div>
-                        <Fill actionName={actionName} actionJob={actionJob} arraySkills={arraySkills} actionEmail={actionEmail} actionTel={actionTel} actionLinkedin={actionLinkedin} actionGit={actionGit} card={card} imageDefault={imageDefault} handleUrl={handleUrl} />
+                        <Fill actionName={actionName} actionJob={actionJob} arraySkills={arraySkills} actionEmail={actionEmail} actionTel={actionTel} actionLinkedin={actionLinkedin} actionGit={actionGit} card={card} imageDefault={imageDefault} handleUrl={handleUrl} actionFetch={actionFetch}/>
                         <div className="border-section border-section-nomargin"></div>
                         <Share />
                     </form>
