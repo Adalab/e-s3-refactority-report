@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import logo from './logo.svg';
+import logo from '../images/logo-adalab-80px.png';
+import coolCard from '../images/tarjetas-molonas.svg';
 //import 'core/_variables.scss';
 //import './App.scss';
 
@@ -14,7 +15,7 @@ class HomePage extends Component {
         <div className="home__main">
             <header className="page__header">
             <h1 className="hidden__element header__title"> Awesome profile-cards</h1>
-            <img src='assets/images/tarjetas-molonas.svg' alt="logo" className="header__logo"/>
+            <img src={coolCard} alt="logo" className="header__logo"/>
             </header>  
             <h2 className="main__title-2">Crea tu tarjeta de visita</h2>
             <p className="main__text">Crea mejores contactos profesionales de forma fácil y cómoda</p>
@@ -31,7 +32,7 @@ class HomePage extends Component {
         <div className="footer__container">
             <p className="footer__text">Awesome profile-cards @2018</p>
             <a href="https://adalab.es/">
-                <img src="assets/images/logo-adalab-80px.png" alt="Logo Adalab" className="footer__logo"/>
+                <img src={logo} alt="Logo Adalab" className="footer__logo"/>
             </a>
         </div>
     </footer>
