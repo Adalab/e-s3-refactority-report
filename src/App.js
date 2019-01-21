@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Creator from './components/Creator';
 import './App.scss';
 import {fetchSkills} from './services/SkillsService';
-
+import { Route, Switch} from 'react-router-dom';
+import HomePage from './components/HomePage';
 
 class App extends Component {
   
@@ -10,7 +11,8 @@ class App extends Component {
     super(props);
     
     this.state = {
-    arraySkills : [],
+
+      arraySkills : [],
     card: {
       name: 'Nombre Apellido',
       job: 'front-end developer',
@@ -26,6 +28,7 @@ class App extends Component {
 
     }; 
 
+
     this.handleName = this.handleName.bind(this);  
     this.handleJob = this.handleJob.bind(this);
     this.handleUrl = this.handleUrl.bind(this);
@@ -35,7 +38,8 @@ class App extends Component {
     this.handleGit = this.handleGit.bind(this);   
     this.fetchNewSkills = this.fetchNewSkills.bind(this);
     this.handleFillSkills = this.handleFillSkills.bind(this);
-
+    this.handleTypo = this.handleTypo.bind(this);
+    this.handleColor = this.handleColor.bind(this);   
   }
 
 handleName(e) {
@@ -126,13 +130,37 @@ handleFillSkills (e) {
   this.setState({
     card: {...card, skills : skillsSelected}
   })
+=======
+handleTypo(e){
+  const typo = parseInt(e.currentTarget.value);
+  const {card} = this.state;
+  this.setState({
+    card: {...card, typography: typo }
+  });
+}
+
+handleColor(e){
+  const palette = parseInt(e.currentTarget.value);
+  const {card} = this.state;
+  this.setState({
+    card: {...card, palette: palette }
+  });
 }
 
   render() {
     const {card, arraySkills, imageDefault} = this.state;
 
     return (
-          <Creator actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills}/>
+
+      <React.Fragment>
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+            <Route path='/creator'
+            render={props => (
+            <Creator match={props.match} actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} />)} 
+          />        
+        </Switch>
+      </React.Fragment>
     );
   }
 }
