@@ -335,23 +335,23 @@ li,ul {
   border-radius: 16px;
 }
 
-.social__container--green li {
+.social__container--green {
   border: 2px solid #a2deaf;
 }
 
-.social__container--green li a {
+.social__icon--green {
   color: #114e4e;
 }
 
- .social__container--green .hidden {
+.hidden {
   display: none;
  }
 
-.social__container--red li {
+.social__container--red {
   border: 2px solid #e95626;
 }
 
-.social__container--red li a {
+.social__icon--red {
   color: #420101;
 }
 
@@ -359,15 +359,15 @@ li,ul {
   display: none;
 }
 
-.social__container--grey {
+.social__icon--grey {
   color: #3e5b65;
 }
 
-.social__container--grey li {
+.social__container--grey {
   border: 2px solid #a0c0cf;
 }
 
-.social__container--grey li a {
+.social__container--grey {
   color: #3e5b65;
 }
 
@@ -1071,7 +1071,6 @@ li,ul {
 
   .font-ubuntu {
     @include Text-Style-5();
-    color: black;
     text-align: left;
 }
 
@@ -1082,7 +1081,6 @@ li,ul {
 .font-montserrat {
     font-family: 'Merriweather', serif;
     font-size: 16px;
-    color: black;
 }
 
 }
