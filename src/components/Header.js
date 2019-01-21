@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import coolCard from '../images/tarjetas-molonas.svg';
+import { Link } from 'react-router-dom';
 
 
 class Header extends Component {
@@ -7,9 +8,9 @@ class Header extends Component {
         return (
             <header className="page__header--cards">
                 <h1 className="header__title--cards hidden"> Awesome profile-cards</h1>
-                <a href="index.html">
+                <Link to="/">
                     <img src={coolCard} alt="logo" className="header__logo--cards" />
-                </a>
+                </Link>
             </header>
         );
     }
