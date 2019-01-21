@@ -6,31 +6,27 @@ import { Route, Switch} from 'react-router-dom';
 import HomePage from './components/HomePage';
 
 class App extends Component {
-  
+
   constructor (props){
     super(props);
     
     this.state = {
 
       arraySkills : [],
-    card: {
-      name: 'Nombre Apellido',
-      job: 'front-end developer',
-      image: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT",
-      email: '',
-      tel:'',
-      linkedin:'',
-      git:'',
-      typography: 2,
-      palette: 1,
-      skills: []
-    },
-
-    imageDefault: true
-
-    }; 
-
-
+      card: {
+        name: 'Nombre Apellido',
+        job: 'front-end developer',
+        image: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT",
+        email: '',
+        tel:'',
+        linkedin:'',
+        git:'',
+        typography: 2,
+        palette: 1,
+        skills: []
+      },
+      imageDefault: true
+    };
     this.handleName = this.handleName.bind(this);  
     this.handleJob = this.handleJob.bind(this);
     this.handleUrl = this.handleUrl.bind(this);
@@ -42,6 +38,7 @@ class App extends Component {
     this.handleFillSkills = this.handleFillSkills.bind(this);
     this.handleTypo = this.handleTypo.bind(this);
     this.handleColor = this.handleColor.bind(this);   
+    this.handleReset = this.handleReset.bind(this);
   }
 
 handleName(e) {
@@ -150,6 +147,26 @@ handleColor(e){
   });
 }
 
+handleReset() {
+  const {card} = this.state;
+  const defaultCard = {
+      name: 'Nombre Apellido',
+      job: 'front-end developer',
+      image: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT",
+      email: '',
+      tel:'',
+      linkedin:'',
+      git:'',
+      typography: 2,
+      palette: 1,
+      skills: []
+    };
+
+  this.setState({
+    card: defaultCard
+  });
+}
+
   render() {
     const {card, arraySkills, imageDefault} = this.state;
 
@@ -160,7 +177,7 @@ handleColor(e){
           <Route exact path='/' component={HomePage} />
             <Route path='/creator'
             render={props => (
-            <Creator match={props.match} actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} />)} 
+            <Creator match={props.match} actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} handleReset={this.handleReset} />)} 
           />        
         </Switch>
       </React.Fragment>
