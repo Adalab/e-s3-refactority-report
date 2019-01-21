@@ -21,6 +21,8 @@ class App extends Component {
       tel:'',
       linkedin:'',
       git:'',
+      typography: 2,
+      palette: 1,
       skills: []
     },
 
@@ -129,9 +131,10 @@ handleFillSkills (e) {
 
   this.setState({
     card: {...card, skills : skillsSelected}
-  })
-=======
-handleTypo(e){
+  });
+}
+
+  handleTypo(e) {
   const typo = parseInt(e.currentTarget.value);
   const {card} = this.state;
   this.setState({
@@ -157,7 +160,7 @@ handleColor(e){
           <Route exact path='/' component={HomePage} />
             <Route path='/creator'
             render={props => (
-            <Creator match={props.match} actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} />)} 
+            <Creator match={props.match} actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} />)} 
           />        
         </Switch>
       </React.Fragment>
