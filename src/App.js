@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Creator from './components/Creator';
 import './App.scss';
+import {fetchSkills} from './services/SkillsService';
 import { Route, Switch} from 'react-router-dom';
 import HomePage from './components/HomePage';
 
@@ -10,20 +11,23 @@ class App extends Component {
     super(props);
     
     this.state = {
-      arraySkills: ['html', 'css', 'javascript'],
-      card: {
-        name: 'Nombre Apellido',
-        job: 'front-end developer',
-        image: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT",
-        email: '',
-        tel:'',
-        linkedin:'',
-        git:'',
-        palette: 1,
-        typography: 2
-      },
-      imageDefault: true
-    };
+
+      arraySkills : [],
+    card: {
+      name: 'Nombre Apellido',
+      job: 'front-end developer',
+      image: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT",
+      email: '',
+      tel:'',
+      linkedin:'',
+      git:'',
+      skills: []
+    },
+
+    imageDefault: true
+
+    }; 
+
 
     this.handleName = this.handleName.bind(this);  
     this.handleJob = this.handleJob.bind(this);
@@ -31,7 +35,9 @@ class App extends Component {
     this.handleEmail = this.handleEmail.bind(this);
     this.handleTel = this.handleTel.bind(this);
     this.handleLinkedin = this.handleLinkedin.bind(this);
-    this.handleGit = this.handleGit.bind(this);
+    this.handleGit = this.handleGit.bind(this);   
+    this.fetchNewSkills = this.fetchNewSkills.bind(this);
+    this.handleFillSkills = this.handleFillSkills.bind(this);
     this.handleTypo = this.handleTypo.bind(this);
     this.handleColor = this.handleColor.bind(this);   
   }
@@ -43,6 +49,7 @@ handleName(e) {
     card: {...card, name: name }
   });
 }
+
 handleJob(e) {
   const job = e.currentTarget.value;
   const {card} = this.state;
@@ -50,6 +57,7 @@ handleJob(e) {
     card: {...card, job: job }
   });
 }
+
 handleUrl(url) {
   const {card} = this.state;
   this.setState({
@@ -90,6 +98,39 @@ handleGit(e) {
   });
 }
 
+fetchNewSkills(){
+  fetchSkills()
+  .then(data=>{
+    console.log(data);
+    this.setState({
+      arraySkills: data.skills})
+  });
+}
+
+handleSkills(e) {
+  const skill = e.currentTarget.value;
+  const {card} = this.state;
+  this.setState({
+    card: {...card, skills: skill }
+  });
+}
+
+handleFillSkills (e) {
+  const skill = e.target.value;
+  const {card} = this.state;
+
+  let skillsSelected = this.state.card.skills;
+
+  if (skillsSelected.length < 3 && e.target.checked === true) {
+    skillsSelected.push(skill)
+  } else { 
+    skillsSelected.splice(skillsSelected.indexOf(skill), 1);
+  }
+
+  this.setState({
+    card: {...card, skills : skillsSelected}
+  })
+=======
 handleTypo(e){
   const typo = parseInt(e.currentTarget.value);
   const {card} = this.state;
@@ -110,12 +151,13 @@ handleColor(e){
     const {card, arraySkills, imageDefault} = this.state;
 
     return (
+
       <React.Fragment>
         <Switch>
           <Route exact path='/' component={HomePage} />
             <Route path='/creator'
             render={props => (
-            <Creator match={props.match} actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} />)} 
+            <Creator match={props.match} actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} />)} 
           />        
         </Switch>
       </React.Fragment>
