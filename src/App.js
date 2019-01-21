@@ -11,11 +11,10 @@ class App extends Component {
     super(props);
     
     this.state = {
-
       arraySkills : [],
       card: {
-        name: 'Nombre Apellido',
-        job: 'front-end developer',
+        name: '',
+        job: '',
         image: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT",
         email: '',
         tel:'',
@@ -24,6 +23,10 @@ class App extends Component {
         typography: 2,
         palette: 1,
         skills: []
+      },
+      cardTitles: {
+        name: 'Nombre Apellido',
+        job: 'front-end developer',
       },
       imageDefault: true
     };
@@ -43,17 +46,19 @@ class App extends Component {
 
 handleName(e) {
   const name = e.currentTarget.value;
-  const {card} = this.state;
+  const {card, cardTitles} = this.state;
   this.setState({
-    card: {...card, name: name }
+    card: {...card, name: name },
+    cardTitles: {...cardTitles, name: name}
   });
 }
 
 handleJob(e) {
   const job = e.currentTarget.value;
-  const {card} = this.state;
+  const {card, cardTitles} = this.state;
   this.setState({
-    card: {...card, job: job }
+    card: {...card, job: job },
+    cardTitles: {...cardTitles, job: job }
   });
 }
 
@@ -148,10 +153,9 @@ handleColor(e){
 }
 
 handleReset() {
-  const {card} = this.state;
   const defaultCard = {
-      name: 'Nombre Apellido',
-      job: 'front-end developer',
+      name: '',
+      job: '',
       image: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT",
       email: '',
       tel:'',
@@ -161,14 +165,20 @@ handleReset() {
       palette: 1,
       skills: []
     };
+  
+  const defaultCardTitles = {
+    name: 'Nombre Apellido',
+    job: 'front-end developer',
+  };
 
   this.setState({
-    card: defaultCard
+    card: defaultCard,
+    cardTitles: defaultCardTitles
   });
 }
 
   render() {
-    const {card, arraySkills, imageDefault} = this.state;
+    const {card, cardTitles, arraySkills, imageDefault} = this.state;
 
     return (
 
@@ -177,7 +187,7 @@ handleReset() {
           <Route exact path='/' component={HomePage} />
             <Route path='/creator'
             render={props => (
-            <Creator match={props.match} actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} handleReset={this.handleReset} />)} 
+            <Creator match={props.match} actionName={this.handleName} valueName={this.state.card.name} actionJob={this.handleJob} valueJob={this.state.card.job} cardTitles={cardTitles} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} handleReset={this.handleReset} />)} 
           />        
         </Switch>
       </React.Fragment>
