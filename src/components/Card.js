@@ -93,8 +93,8 @@ class Card extends Component {
                 <div className="preview__title">
                     <div className={`preview__decoration-rectangle ${bg[card.palette]}`}></div>
                     <div className="preview__texts">
-                        <p className={`${fonts[card.typography]} ${color[card.palette]} preview__name`}>{cardTitles.name}</p>
-                        <p className={`${fonts[card.typography]} preview__occupation`}>{cardTitles.job}</p>
+                        <p className={`${fonts[card.typography]} ${color[card.palette]} preview__name`}>{card.name}</p>
+                        <p className={`${fonts[card.typography]} preview__occupation`}>{card.job}</p>
                     </div>
                 </div>
                 <div className="preview__image" style={{backgroundImage: `url(${card.image})`}}></div>

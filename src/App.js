@@ -13,7 +13,8 @@ class App extends Component {
     this.state = {
       arraySkills : [],
       card: {
-        name: '',
+        name: 'Nombre Apellido',
+        name: 'front-end developer',
         job: '',
         image: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT",
         email: '',
@@ -24,10 +25,7 @@ class App extends Component {
         palette: 1,
         skills: []
       },
-      cardTitles: {
-        name: 'Nombre Apellido',
-        job: 'front-end developer',
-      },
+      
       imageDefault: true
     };
     this.handleName = this.handleName.bind(this);  
@@ -154,8 +152,8 @@ handleColor(e){
 
 handleReset() {
   const defaultCard = {
-      name: '',
-      job: '',
+      name: 'Nombre Apellido',
+      job: 'front-end developer',
       image: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT",
       email: '',
       tel:'',
@@ -165,20 +163,14 @@ handleReset() {
       palette: 1,
       skills: []
     };
-  
-  const defaultCardTitles = {
-    name: 'Nombre Apellido',
-    job: 'front-end developer',
-  };
 
   this.setState({
     card: defaultCard,
-    cardTitles: defaultCardTitles
   });
 }
 
   render() {
-    const {card, cardTitles, arraySkills, imageDefault} = this.state;
+    const {card, arraySkills, imageDefault} = this.state;
 
     return (
 
@@ -187,7 +179,7 @@ handleReset() {
           <Route exact path='/' component={HomePage} />
             <Route path='/creator'
             render={props => (
-            <Creator match={props.match} actionName={this.handleName} valueName={this.state.card.name} actionJob={this.handleJob} valueJob={this.state.card.job} cardTitles={cardTitles} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} handleReset={this.handleReset} />)} 
+            <Creator match={props.match} actionName={this.handleName} valueName={this.state.card.name} actionJob={this.handleJob} valueJob={this.state.card.job} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} handleReset={this.handleReset} />)} 
           />        
         </Switch>
       </React.Fragment>

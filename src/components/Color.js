@@ -11,7 +11,7 @@ class Colors extends Component {
                         <li className="main__design--items">
                             <label htmlFor="color-green" className="main__design--palette">
                                 <div className="main__design--input">
-                                    <input defaultChecked={(palette === 1) ? true:false} className="option-button" id="color-green" type="radio"
+                                    <input checked={(palette === 1) ? true:false} className="option-button" id="color-green" type="radio"
                                         value="1" onClick={this.props.actionColor} name="color-selection" />
                                 </div>
                                 <div className="main__design--palette-green">
@@ -24,7 +24,7 @@ class Colors extends Component {
                         <li className="main__design--items">
                             <label htmlFor="color-red" className="main__design--palette">
                                 <div className="main__design--input">
-                                    <input defaultChecked={(palette === 2) ? true:false} className="option-button" id="color-red" type="radio" value="2" onClick={this.props.actionColor}
+                                    <input checked={(palette === 2) ? true:false} className="option-button" id="color-red" type="radio" value="2" onClick={this.props.actionColor}
                                         name="color-selection" />
                                 </div>
                                 <div className="main__design--palette-red">
@@ -37,7 +37,7 @@ class Colors extends Component {
                         <li className="main__design--items">
                             <label htmlFor="color-grey" className="main__design--palette">
                                 <div className="main__design--input">
-                                    <input defaultChecked={(palette === 3) ? true:false} className="option-button" id="color-grey" type="radio" value="3" onClick={this.props.actionColor}
+                                    <input checked={(palette === 3) ? true:false} className="option-button" id="color-grey" type="radio" value="3" onClick={this.props.actionColor}
                                         name="color-selection" />
                                 </div>
                                 <div className="main__design--palette-grey">
