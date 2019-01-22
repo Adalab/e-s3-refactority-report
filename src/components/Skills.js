@@ -6,12 +6,12 @@ class Skills extends Component {
     }
 
     render() {
-        
+        const {actionFillS} = this.props;
         const arraySkills = this.props.arraySkills.map((skill, index) => {
             return (
                 <li key={index}>
                     <label htmlFor={skill} className="option-skills">
-                    <input className="option-button option-skills-button" id={skill} type="checkbox" value={skill} name={skill} onClick={this.props.actionFillS}/>
+                    <input className="option-button option-skills-button" id={skill} type="checkbox" value={skill} name={skill} onClick={actionFillS}/>
                     <p className="skills">{skill}</p>
                     </label>
                 </li>
