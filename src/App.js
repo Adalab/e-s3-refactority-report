@@ -14,8 +14,7 @@ class App extends Component {
       arraySkills : [],
       card: {
         name: 'Nombre Apellido',
-        name: 'front-end developer',
-        job: '',
+        job: 'front-end developer',
         image: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT",
         email: '',
         tel:'',
