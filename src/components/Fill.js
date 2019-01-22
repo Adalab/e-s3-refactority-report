@@ -22,7 +22,7 @@ class Fill extends Component {
                 <div className="main__fill--container hidden">
                     <NameJob actionName={actionName} valueName={valueName} actionJob={actionJob} valueJob={valueJob} />
                     <Image card={card} imageDefault={imageDefault} handleUrl={handleUrl} />
-                    <Rrss actionEmail={actionEmail} actionTel={actionTel} actionLinkedin={actionLinkedin} actionGit={actionGit} />
+                    <Rrss actionEmail={actionEmail} actionTel={actionTel} actionLinkedin={actionLinkedin} actionGit={actionGit} card={card} />
                     <Skills arraySkills={arraySkills} actionFetch={actionFetch} actionFillS={actionFillS}/>
                 </div>
             </fieldset>
