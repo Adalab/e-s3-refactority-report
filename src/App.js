@@ -148,7 +148,6 @@ handleColor(e){
 }
 
 handleReset() {
-  const {card} = this.state;
   const defaultCard = {
       name: 'Nombre Apellido',
       job: 'front-end developer',
