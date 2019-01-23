@@ -43,19 +43,17 @@ class App extends Component {
 
 handleName(e) {
   const name = e.currentTarget.value;
-  const {card, cardTitles} = this.state;
+  const {card} = this.state;
   this.setState({
     card: {...card, name: name },
-    cardTitles: {...cardTitles, name: name}
   });
 }
 
 handleJob(e) {
   const job = e.currentTarget.value;
-  const {card, cardTitles} = this.state;
+  const {card} = this.state;
   this.setState({
     card: {...card, job: job },
-    cardTitles: {...cardTitles, job: job }
   });
 }
 
