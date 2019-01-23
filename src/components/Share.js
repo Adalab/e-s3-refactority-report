@@ -14,8 +14,8 @@ class Share extends Component {
 
                     </div>
                 </div>
-                <div className="main__share--container hidden">
-                    <button className="main__share--create hidden" type="button"> <span className="main__share--create- far fa-address-card"></span>
+                <div className="main__share--container">
+                    <button className="main__share--create" type="button"> <span className="main__share--create- far fa-address-card"></span>
                         <span className="main__share--create-text">crear tarjeta</span>
 
                     </button>
