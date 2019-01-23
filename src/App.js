@@ -45,7 +45,7 @@ handleName(e) {
   const name = e.currentTarget.value;
   const {card} = this.state;
   this.setState({
-    card: {...card, name: name },
+    card: {...card, name: name }
   });
 }
 
@@ -53,7 +53,7 @@ handleJob(e) {
   const job = e.currentTarget.value;
   const {card} = this.state;
   this.setState({
-    card: {...card, job: job },
+    card: {...card, job: job }
   });
 }
 

@@ -80,7 +80,7 @@ class Card extends Component {
     }
 
     render(){
-        const {card, cardTitles} = this.props;
+        const {card} = this.props;
         const arraySkills = card.skills.map((skill, index) => {
             return (
                 <li key={index}>
