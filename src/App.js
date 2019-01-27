@@ -121,10 +121,17 @@ handleFillSkills (e) {
   let skillsSelected = this.state.card.skills;
 
   if (skillsSelected.length < 3 && e.target.checked === true) {
-    skillsSelected.push(skill)
-  } else { 
+    skillsSelected.push(skill);
+  } else if (skillsSelected.length>=3 && skillsSelected.includes(skill)) { 
+    e.target.checked = false;
     skillsSelected.splice(skillsSelected.indexOf(skill), 1);
+  } else if (skillsSelected.length<3 && skillsSelected.includes(skill)) {
+    e.target.checked = false;
+    skillsSelected.splice(skillsSelected.indexOf(skill), 1);
+  } else if (skillsSelected.length>=3 && !(skillsSelected.includes(skill))) {
+    e.target.checked = false;
   }
+
 
   this.setState({
     card: {...card, skills : skillsSelected}

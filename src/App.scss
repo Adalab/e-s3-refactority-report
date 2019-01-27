@@ -301,17 +301,21 @@ li,ul {
   padding: 10px 0;
 }
 
-.icons__container--green li {
-  background-color: #438792;
+.border-radius__skills {
+  border-radius: 5px;
+  padding: 5px;
 }
+// .icons__container--green li {
+//   background-color: #438792;
+// }
 
-.icons__container--red li {
-  background-color: #bd1010;
-}
+// .icons__container--red li {
+//   background-color: #bd1010;
+// }
 
-.icons__container--grey li {
-  background-color: #dfe5eb;
-}
+// .icons__container--grey li {
+//   background-color: #dfe5eb;
+// }
 
 .socialicons-style {
   text-decoration: none;
