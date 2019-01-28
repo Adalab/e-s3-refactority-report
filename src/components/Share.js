@@ -1,6 +1,29 @@
 import React, { Component } from 'react';
+import {sendCard} from './../services/CardServices';
+
 
 class Share extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            twitter : 'twitter',
+            linkTwitter : '',
+            linkCard : ''
+        }
+        this.handleShare = this.handleShare.bind(this);
+    }
+
+    handleShare(){
+        sendCard(this.props.card)
+        .then(bonaparte => {
+            this.setState ({
+                twitter: 'on',
+                linkTwitter: `https://twitter.com/share?url=${bonaparte.CARDURL}&text=¡Ey! Mira que tarjeta más molona acabo de hacer con Javascript &hashtags=JavaScript, Adalab`,
+                linkCard: bonaparte.CARDURL
+            })
+        })
+    }
+
     render() {
         return (
             <fieldset className="main__collapsable main__share">
@@ -15,7 +38,7 @@ class Share extends Component {
                     </div>
                 </div>
                 <div className="main__share--container">
-                    <button className="main__share--create" type="button"> <span className="main__share--create- far fa-address-card"></span>
+                    <button className="main__share--create" type="button"> <span className="main__share--create- far fa-address-card" onClick={this.handleShare}></span>
                         <span className="main__share--create-text">crear tarjeta</span>
 
                     </button>
