@@ -26,6 +26,7 @@ class App extends Component {
       },
       
       collapsable: 'main__design--container hidden',
+      collapsableFill: 'main__fill--container hidden',
       imageDefault: true
     };
     this.handleName = this.handleName.bind(this);  
@@ -41,6 +42,7 @@ class App extends Component {
     this.handleColor = this.handleColor.bind(this);  
     this.handleReset = this.handleReset.bind(this);
     this.handleCollapsable = this.handleCollapsable.bind(this);
+    this.handleCollapsableFill = this.handleCollapsableFill.bind(this);
   }
 
 handleName(e) {
@@ -169,6 +171,20 @@ handleCollapsable(){
   }
 }
 
+handleCollapsableFill(){
+    
+  if (this.state.collapsableFill.includes('hidden')){
+    this.setState({
+      collapsableFill: 'main__fill--container'
+    })
+  } else {
+    this.setState({
+      collapsableFill: 'main__fill--container hidden'
+    })
+  }
+}
+
+
 handleReset() {
   const defaultCard = {
       name: 'Nombre Apellido',
@@ -192,7 +208,7 @@ handleReset() {
 }
 
   render() {
-    const {card, arraySkills, imageDefault, collapsable} = this.state;
+    const {card, arraySkills, imageDefault, collapsable, handleCollapsableFill, collapsableFill, handleCollapsable} = this.state;
 
     return (
 
@@ -201,7 +217,7 @@ handleReset() {
           <Route exact path='/' component={HomePage} />
             <Route path='/creator'
             render={props => (
-            <Creator match={props.match} actionName={this.handleName} valueName={this.state.card.name} actionJob={this.handleJob} valueJob={this.state.card.job} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} handleReset={this.handleReset} handleCollapsable={this.handleCollapsable} collapsable={collapsable}/>)} 
+            <Creator match={props.match} actionName={this.handleName} valueName={this.state.card.name} actionJob={this.handleJob} valueJob={this.state.card.job} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} handleReset={this.handleReset} handleCollapsable={this.handleCollapsable} collapsable={collapsable} handleCollapsableFill={this.handleCollapsableFill} collapsableFill={collapsableFill}/>)} 
           />        
         </Switch>
       </React.Fragment>
