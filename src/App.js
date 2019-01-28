@@ -186,7 +186,7 @@ handleReset() {
           <Route exact path='/' component={HomePage} />
             <Route path='/creator'
             render={props => (
-            <Creator match={props.match} actionName={this.handleName} valueName={this.state.card.name} actionJob={this.handleJob} valueJob={this.state.card.job} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} handleReset={this.handleReset} />)} 
+            <Creator match={props.match} actionName={this.handleName} valueName={this.state.card.name} actionJob={this.handleJob} valueJob={this.state.card.job} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} handleReset={this.handleReset} handleCollapsable={this.handleCollapsable}/>)} 
           />        
         </Switch>
       </React.Fragment>
