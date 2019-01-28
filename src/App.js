@@ -11,7 +11,6 @@ class App extends Component {
     super(props);
     
     this.state = {
-
       arraySkills : [],
       card: {
         name: 'Nombre Apellido',
@@ -25,6 +24,7 @@ class App extends Component {
         palette: 1,
         skills: []
       },
+      
       imageDefault: true
     };
     this.handleName = this.handleName.bind(this);  
@@ -155,7 +155,6 @@ handleColor(e){
 }
 
 handleReset() {
-  const {card} = this.state;
   const defaultCard = {
       name: 'Nombre Apellido',
       job: 'front-end developer',
@@ -169,8 +168,11 @@ handleReset() {
       skills: []
     };
 
+    document.querySelector(".main__form").reset();
+
   this.setState({
-    card: defaultCard
+    card: defaultCard,
+    imageDefault: true
   });
 }
 
@@ -184,7 +186,7 @@ handleReset() {
           <Route exact path='/' component={HomePage} />
             <Route path='/creator'
             render={props => (
-            <Creator match={props.match} actionName={this.handleName} actionJob={this.handleJob} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} handleReset={this.handleReset} />)} 
+            <Creator match={props.match} actionName={this.handleName} valueName={this.state.card.name} actionJob={this.handleJob} valueJob={this.state.card.job} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} handleReset={this.handleReset} />)} 
           />        
         </Switch>
       </React.Fragment>
