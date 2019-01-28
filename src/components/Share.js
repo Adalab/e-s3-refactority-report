@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
-import {sendCard} from './../services/CardServices';
+import { sendCard } from './../services/CardServices';
 
 
 class Share extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            twitter : 'twitter',
-            linkTwitter : '',
-            linkCard : ''
+            twitter: 'twitter',
+            linkTwitter: '',
+            linkCard: ''
         }
         this.handleShare = this.handleShare.bind(this);
     }
 
-    handleShare(){
+    handleShare() {
+        console.log('hola');
         sendCard(this.props.card)
-        .then(bonaparte => {
-            this.setState ({
-                twitter: 'on',
-                linkTwitter: `https://twitter.com/share?url=${bonaparte.CARDURL}&text=¡Ey! Mira que tarjeta más molona acabo de hacer con Javascript &hashtags=JavaScript, Adalab`,
-                linkCard: bonaparte.CARDURL
+            .then(bonaparte => {
+                this.setState({
+                    twitter: 'on',
+                    linkTwitter: `https://twitter.com/share?url=${bonaparte.CARDURL}&text=¡Ey! Mira que tarjeta más molona acabo de hacer con Javascript &hashtags=JavaScript, Adalab`,
+                    linkCard: bonaparte.CARDURL
+                })
             })
-        })
+            .catch(error => alert('servicio no disponible.\nError: ' + error));
     }
 
     render() {
@@ -38,20 +40,20 @@ class Share extends Component {
                     </div>
                 </div>
                 <div className="main__share--container">
-                    <button className="main__share--create" type="button"> <span className="main__share--create- far fa-address-card" onClick={this.handleShare}></span>
+                    <button className="main__share--create" type="button" onClick={this.handleShare}> <span className="main__share--create- far fa-address-card" ></span>
                         <span className="main__share--create-text">crear tarjeta</span>
 
                     </button>
                 </div>
                 <div className="border-section"></div>
 
-                <div className="main__share--generated hidden">
+                <div className="main__share--generated">
                     <h3 className="main__share--generated-text">La tarjeta ha sido creada:</h3>
-                    <a className="main__share--generated-link" href=""></a>
+                    <a className="main__share--generated-link"  target="_blank" href={this.state.linkCard}></a>
 
                     <div className="main__share--twitter-button"> <span className="main__share--generated-twitter- fab fa-twitter"></span>
 
-                        <a className="main__share--generated-twitter" target="_blank" href="">Compartir en twitter</a>
+                        <a className="main__share--generated-twitter" target="_blank" href={this.state.linkTwitter}>Compartir en twitter</a>
                     </div>
                     <div className="border-section"></div>
                 </div>
