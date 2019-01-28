@@ -3,7 +3,7 @@ import React, { Component} from 'react';
 const fonts = ['','font-ubuntu', 'font-comic-sans', 'font-montserrat'];
 const color = ['', 'preview__name--green', 'preview__name--red', 'preview__name--grey' ];
 const bg = ['', 'preview__decoration-rectangle--green', 'preview__decoration-rectangle--red', 'preview__decoration-rectangle--grey'];
-const border = ['', 'social__container--green', 'social__container--red', 'social__container--grey' ]
+const border = ['', 'social__container--green', 'social__container--red', 'social__container--grey' ];
 
 class Card extends Component {
 
@@ -83,7 +83,7 @@ class Card extends Component {
         const {card} = this.props;
         const arraySkills = card.skills.map((skill, index) => {
             return (
-                <li key={index}>
+                <li key={index} className={`${bg[card.palette]} border-radius__skills`}>
                     <div>{skill}</div>
                 </li>
             );})
@@ -105,7 +105,7 @@ class Card extends Component {
                     {this.writeGitIcon(card.git)}
                 </ul>
                 <div className="skills__container">
-                    <ul className="icons__container icons__container--green preview__skills-icons">
+                    <ul className={`icons__container icons__container--green preview__skills-icons`}>
                         {arraySkills}
                     </ul>
                 </div>
