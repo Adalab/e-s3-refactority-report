@@ -4,7 +4,7 @@ class Share extends Component {
     render() {
         return (
             <fieldset className="main__collapsable main__share">
-                <div className="dropdown dropdown__share">
+                <div className="dropdown dropdown__share" onClick={this.props.handleCollapsableShare}>
                     <div className="dropdown-icon"> <span className="dropdown-icon icon fas fa-share-alt"></span>
 
                         <h2 className="form__title main__share--title">comparte</h2>
@@ -14,7 +14,7 @@ class Share extends Component {
 
                     </div>
                 </div>
-                <div className="main__share--container">
+                <div className={this.props.collapsableShare}>
                     <button className="main__share--create" type="button"> <span className="main__share--create- far fa-address-card"></span>
                         <span className="main__share--create-text">crear tarjeta</span>
 
