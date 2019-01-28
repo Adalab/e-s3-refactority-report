@@ -737,6 +737,12 @@ li,ul {
   margin-top: 18px;
 }
 
+.main__share--container.hidden{
+  display: none;
+}
+
+
+
 .main__share--generated-text {
   font-family: 'OpenSans', sans-serif;
   color: #54585a;

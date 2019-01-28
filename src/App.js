@@ -27,6 +27,7 @@ class App extends Component {
       
       collapsable: 'main__design--container hidden',
       collapsableFill: 'main__fill--container hidden',
+      collapsableShare: 'main__share--container hidden',
       imageDefault: true
     };
     this.handleName = this.handleName.bind(this);  
@@ -43,6 +44,7 @@ class App extends Component {
     this.handleReset = this.handleReset.bind(this);
     this.handleCollapsable = this.handleCollapsable.bind(this);
     this.handleCollapsableFill = this.handleCollapsableFill.bind(this);
+    this.handleCollapsableShare = this.handleCollapsableShare.bind(this);
   }
 
 handleName(e) {
@@ -184,6 +186,20 @@ handleCollapsableFill(){
   }
 }
 
+handleCollapsableShare(){
+    
+  if (this.state.collapsableShare.includes('hidden')){
+    this.setState({
+      collapsableShare: 'main__share--container'
+    })
+  } else {
+    this.setState({
+      collapsableShare: 'main__share--container hidden'
+    })
+  }
+}
+
+
 
 handleReset() {
   const defaultCard = {
@@ -208,7 +224,7 @@ handleReset() {
 }
 
   render() {
-    const {card, arraySkills, imageDefault, collapsable, handleCollapsableFill, collapsableFill, handleCollapsable} = this.state;
+    const {card, arraySkills, imageDefault, collapsable, collapsableFill,collapsableShare} = this.state;
 
     return (
 
@@ -217,7 +233,7 @@ handleReset() {
           <Route exact path='/' component={HomePage} />
             <Route path='/creator'
             render={props => (
-            <Creator match={props.match} actionName={this.handleName} valueName={this.state.card.name} actionJob={this.handleJob} valueJob={this.state.card.job} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} handleReset={this.handleReset} handleCollapsable={this.handleCollapsable} collapsable={collapsable} handleCollapsableFill={this.handleCollapsableFill} collapsableFill={collapsableFill}/>)} 
+            <Creator match={props.match} actionName={this.handleName} valueName={this.state.card.name} actionJob={this.handleJob} valueJob={this.state.card.job} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} handleReset={this.handleReset} handleCollapsable={this.handleCollapsable} collapsable={collapsable} handleCollapsableFill={this.handleCollapsableFill} collapsableFill={collapsableFill} collapsableShare={collapsableShare} handleCollapsableShare={this.handleCollapsableShare}/>)} 
           />        
         </Switch>
       </React.Fragment>
