@@ -9,18 +9,18 @@ import Preview from './Preview';
 class MainCreator extends Component {
     render() {
 
-        const {card, arraySkills, actionName, valueName, actionJob, valueJob, actionEmail, actionTel, actionLinkedin, actionGit, handleUrl, imageDefault, actionTypo, actionColor, actionFetch, actionFillS, handleReset, handleCollapsable} = this.props;
+        const {card, arraySkills, actionName, valueName, actionJob, valueJob, actionEmail, actionTel, actionLinkedin, actionGit, handleUrl, imageDefault, actionTypo, actionColor, actionFetch, actionFillS, handleReset, handleCollapsable, collapsable} = this.props;
 
         return (
             <main className="main__container">
                 <div className="cards--form__container">
                    <Preview card={card} handleReset={handleReset}/>
                     <form className="main__form"> 
-                        <Design actionColor={actionColor} actionTypo={actionTypo} card={card} handleCollapsable={handleCollapsable}/>
+                        <Design actionColor={actionColor} actionTypo={actionTypo} card={card} handleCollapsable={handleCollapsable} collapsable={collapsable}/>
                         <div className="border-section border-section-nomargin"></div>
-                        <Fill actionName={actionName} valueName={valueName} actionJob={actionJob} valueJob={valueJob} arraySkills={arraySkills} actionEmail={actionEmail} actionTel={actionTel} actionLinkedin={actionLinkedin} actionGit={actionGit} card={card} imageDefault={imageDefault} handleUrl={handleUrl} actionFetch={actionFetch} actionFillS={actionFillS} handleCollapsable={handleCollapsable}/>
+                        <Fill actionName={actionName} valueName={valueName} actionJob={actionJob} valueJob={valueJob} arraySkills={arraySkills} actionEmail={actionEmail} actionTel={actionTel} actionLinkedin={actionLinkedin} actionGit={actionGit} card={card} imageDefault={imageDefault} handleUrl={handleUrl} actionFetch={actionFetch} actionFillS={actionFillS} handleCollapsable={handleCollapsable} collapsable={collapsable}/>
                         <div className="border-section border-section-nomargin"></div>
-                        <Share handleCollapsable={handleCollapsable}/>
+                        <Share handleCollapsable={handleCollapsable} collapsable={collapsable}/>
                     </form>
                 </div>
             </main>

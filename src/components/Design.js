@@ -4,7 +4,7 @@ import Fonts from './Fonts';
 
 class Design extends Component {
     render() {
-        const {actionTypo, actionColor, card, handleCollapsable} = this.props;
+        const {actionTypo, actionColor, card, handleCollapsable, collapsable} = this.props;
         return (
             <fieldset className="main__collapsable main__design">
                 <div className=" dropdown dropdown__design" onClick={handleCollapsable}>
@@ -14,7 +14,7 @@ class Design extends Component {
                     <div className="dropdown-arrow"> <span className="main__arrow fas fa-angle-down"></span>
                     </div>
                 </div>
-                <div className="main__design--container hidden">
+                <div className={collapsable}>
                     <Colors palette={card.palette} actionColor={actionColor}/>
                     <Fonts typo={card.typography} actionTypo={actionTypo} />
                 </div>

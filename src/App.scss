@@ -28,6 +28,7 @@ li,ul {
   margin: 0;
 }
 
+
 .hidden {
   display: none;
 }
@@ -508,11 +509,11 @@ li,ul {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr auto;
   grid-gap: 27px;
+  
 }
-
-// .main__design--container.hidden {
-//   display: none;
-// }
+.main__design--container.hidden {
+ display: none;
+}
 
 .main__design--titles {
   text-transform: uppercase;
