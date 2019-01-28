@@ -9,7 +9,6 @@ class App extends Component {
 
   constructor (props){
     super(props);
-    
     this.state = {
       arraySkills : [],
       card: {
@@ -40,6 +39,36 @@ class App extends Component {
     this.handleColor = this.handleColor.bind(this);   
     this.handleReset = this.handleReset.bind(this);
   }
+
+
+  //LocalStorage
+  
+  componentDidMount(){
+    this.fetchNewSkills();
+    const card = this.getData();
+
+    if(card !== ''){
+      this.setState({card: card});
+    }
+    }
+  componentDidUpdate(){
+    this.saveData(this.state.card)
+  }
+    saveData(data) {
+      localStorage.setItem('savedCard', JSON.stringify(data));
+    }
+    getData() {
+      const savedCard = localStorage.getItem('savedCard');
+  
+      if (savedCard !== null) {
+        return JSON.parse(savedCard);
+      } else {
+        return '';
+      }
+    }
+  
+    
+    
 
 handleName(e) {
   const name = e.currentTarget.value;
@@ -100,7 +129,6 @@ handleGit(e) {
 fetchNewSkills(){
   fetchSkills()
   .then(data=>{
-    console.log(data);
     this.setState({
       arraySkills: data.skills})
   });
