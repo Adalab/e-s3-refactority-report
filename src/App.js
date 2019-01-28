@@ -168,8 +168,11 @@ handleReset() {
       skills: []
     };
 
+    document.querySelector(".main__form").reset();
+
   this.setState({
     card: defaultCard,
+    imageDefault: true
   });
 }
 
