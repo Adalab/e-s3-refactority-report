@@ -38,6 +38,10 @@ class App extends Component {
     this.handleColor = this.handleColor.bind(this);   
     this.handleReset = this.handleReset.bind(this);
   }
+
+
+  //LocalStorage
+  
   componentDidMount(){
     this.fetchNewSkills();
     const card = this.getData();
