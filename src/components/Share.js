@@ -48,11 +48,11 @@ class Share extends Component {
 
                 <div className={`main__share--generated ${this.state.twitter}`}>
                     <h3 className="main__share--generated-text">La tarjeta ha sido creada:</h3>
-                    <a className="main__share--generated-link"  target="_blank" href={this.state.linkCard}>{this.state.linkCard}</a>
+                    <a className="main__share--generated-link" rel="noopener noreferrer" target="_blank" href={this.state.linkCard}>{this.state.linkCard}</a>
 
                     <div className="main__share--twitter-button"> <span className="main__share--generated-twitter- fab fa-twitter"></span>
 
-                        <a className="main__share--generated-twitter" target="_blank" href={this.state.linkTwitter}>Compartir en twitter</a>
+                        <a className="main__share--generated-twitter" rel="noopener noreferrer" target="_blank" href={this.state.linkTwitter}>Compartir en twitter</a>
                     </div>
                     <div className="border-section"></div>
                 </div>
