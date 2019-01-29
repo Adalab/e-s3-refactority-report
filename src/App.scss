@@ -203,7 +203,7 @@ li,ul {
 
 .preview__card {
   width: 100%;
-  max-height: 367px;
+  // max-height: 367px;
   padding-top: 20px;
   background-color: #ffffff;
   -webkit-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.35);
@@ -224,15 +224,18 @@ li,ul {
 }
 
 .preview__decoration-rectangle--green {
+  margin-right: 7px;
   background-color: #a2deaf;
 }
 
 .preview__decoration-rectangle--red {
   background-color: #e95626;
+  margin-right: 7px;
 }
 
 .preview__decoration-rectangle--grey {
   background-color: #a0c0cf;
+  margin-right: 7px;
 }
 
 .preview__texts {
@@ -306,17 +309,6 @@ li,ul {
   border-radius: 5px;
   padding: 5px;
 }
-// .icons__container--green li {
-//   background-color: #438792;
-// }
-
-// .icons__container--red li {
-//   background-color: #bd1010;
-// }
-
-// .icons__container--grey li {
-//   background-color: #dfe5eb;
-// }
 
 .socialicons-style {
   text-decoration: none;
@@ -382,7 +374,7 @@ li,ul {
 
 .preview__skills-icons {
   padding: 10px 0;
-  margin-bottom: 10px;
+ 
 }
 
 .skills__container {
@@ -390,7 +382,7 @@ li,ul {
 }
 
 .preview__skills-icons:first-child {
-  margin-left: 15px;
+  margin-left: 20px;
 }
 
 .skill {
@@ -443,7 +435,9 @@ li,ul {
   margin-right: 10px;
   height: 17px;
   width: 17px;
-}/*color squares starts here*//* green palette */.main__design--palette-green {
+}
+
+.main__design--palette-green {
   margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -466,7 +460,8 @@ li,ul {
   width: 30px;
   height: 25px;
   background-color: #a2deaf;
-}/* red palette */.main__design--palette-red {
+}
+.main__design--palette-red {
   margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -524,7 +519,8 @@ li,ul {
 
 .main__design--fonts {
   text-transform: capitalize;
-}/* grey palette */.main__design--palette-grey {
+}
+.main__design--palette-grey {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
