@@ -309,17 +309,6 @@ li,ul {
   border-radius: 5px;
   padding: 5px;
 }
-// .icons__container--green li {
-//   background-color: #438792;
-// }
-
-// .icons__container--red li {
-//   background-color: #bd1010;
-// }
-
-// .icons__container--grey li {
-//   background-color: #dfe5eb;
-// }
 
 .socialicons-style {
   text-decoration: none;
@@ -385,7 +374,7 @@ li,ul {
 
 .preview__skills-icons {
   padding: 10px 0;
-  // margin-bottom: 10px;
+ 
 }
 
 .skills__container {
@@ -446,7 +435,9 @@ li,ul {
   margin-right: 10px;
   height: 17px;
   width: 17px;
-}/*color squares starts here*//* green palette */.main__design--palette-green {
+}
+
+.main__design--palette-green {
   margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -469,7 +460,8 @@ li,ul {
   width: 30px;
   height: 25px;
   background-color: #a2deaf;
-}/* red palette */.main__design--palette-red {
+}
+.main__design--palette-red {
   margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -527,7 +519,8 @@ li,ul {
 
 .main__design--fonts {
   text-transform: capitalize;
-}/* grey palette */.main__design--palette-grey {
+}
+.main__design--palette-grey {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
