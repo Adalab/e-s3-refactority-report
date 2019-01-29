@@ -6,10 +6,10 @@ import Skills from './Skills';
 
 class Fill extends Component {
     render() {
-        const {arraySkills, actionName, valueName, actionJob, valueJob, actionEmail, actionTel, actionLinkedin, actionGit,  handleUrl, imageDefault, card, actionFetch, actionFillS} = this.props;
+        const {collapsableFill, handleCollapsableFill, arraySkills, actionName, valueName, actionJob, valueJob, actionEmail, actionTel, actionLinkedin, actionGit,  handleUrl, imageDefault, card, actionFetch, actionFillS} = this.props;
         return (
             <fieldset className="main__collapsable main__fill">
-                <div className="dropdown dropdown__fill">
+                <div className="dropdown dropdown__fill" onClick={handleCollapsableFill}>
                     <div className="dropdown-icon"> <span className="dropdown-icon icon far fa-keyboard"></span>
 
                         <h2 className="form__title main__fill--title">rellena</h2>
@@ -19,7 +19,7 @@ class Fill extends Component {
 
                     </div>
                 </div>
-                <div className="main__fill--container hidden">
+                <div className={collapsableFill}>
                     <NameJob actionName={actionName} valueName={valueName} actionJob={actionJob} valueJob={valueJob} />
                     <Image card={card} imageDefault={imageDefault} handleUrl={handleUrl} />
                     <Rrss actionEmail={actionEmail} actionTel={actionTel} actionLinkedin={actionLinkedin} actionGit={actionGit} card={card} />

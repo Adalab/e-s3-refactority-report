@@ -21,9 +21,12 @@ class App extends Component {
         git:'',
         typography: 2,
         palette: 1,
-        skills: []
+        skills: [],
       },
       
+      collapsable: 'main__design--container hidden',
+      collapsableFill: 'main__fill--container hidden',
+      collapsableShare: 'main__share--container hidden',
       imageDefault: true
     };
     this.handleName = this.handleName.bind(this);  
@@ -36,8 +39,11 @@ class App extends Component {
     this.fetchNewSkills = this.fetchNewSkills.bind(this);
     this.handleFillSkills = this.handleFillSkills.bind(this);
     this.handleTypo = this.handleTypo.bind(this);
-    this.handleColor = this.handleColor.bind(this);   
+    this.handleColor = this.handleColor.bind(this);  
     this.handleReset = this.handleReset.bind(this);
+    this.handleCollapsable = this.handleCollapsable.bind(this);
+    this.handleCollapsableFill = this.handleCollapsableFill.bind(this);
+    this.handleCollapsableShare = this.handleCollapsableShare.bind(this);
   }
 
 
@@ -182,6 +188,47 @@ handleColor(e){
   });
 }
 
+handleCollapsable(){
+    
+  if (this.state.collapsable.includes('hidden')){
+    this.setState({
+      collapsable: 'main__design--container'
+    })
+  } else {
+    this.setState({
+      collapsable: 'main__design--container hidden'
+    })
+  }
+}
+
+handleCollapsableFill(){
+    
+  if (this.state.collapsableFill.includes('hidden')){
+    this.setState({
+      collapsableFill: 'main__fill--container'
+    })
+  } else {
+    this.setState({
+      collapsableFill: 'main__fill--container hidden'
+    })
+  }
+}
+
+handleCollapsableShare(){
+    
+  if (this.state.collapsableShare.includes('hidden')){
+    this.setState({
+      collapsableShare: 'main__share--container'
+    })
+  } else {
+    this.setState({
+      collapsableShare: 'main__share--container hidden'
+    })
+  }
+}
+
+
+
 handleReset() {
   const defaultCard = {
       name: 'Nombre Apellido',
@@ -205,7 +252,7 @@ handleReset() {
 }
 
   render() {
-    const {card, arraySkills, imageDefault} = this.state;
+    const {card, arraySkills, imageDefault, collapsable, collapsableFill,collapsableShare} = this.state;
 
     return (
 
@@ -214,7 +261,7 @@ handleReset() {
           <Route exact path='/' component={HomePage} />
             <Route path='/creator'
             render={props => (
-            <Creator match={props.match} actionName={this.handleName} valueName={this.state.card.name} actionJob={this.handleJob} valueJob={this.state.card.job} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} handleReset={this.handleReset} />)} 
+            <Creator match={props.match} actionName={this.handleName} valueName={this.state.card.name} actionJob={this.handleJob} valueJob={this.state.card.job} card={card} arraySkills={arraySkills} actionEmail={this.handleEmail} actionTel={this.handleTel} actionLinkedin={this.handleLinkedin} actionGit={this.handleGit} imageDefault={imageDefault} handleUrl={this.handleUrl} actionTypo={this.handleTypo} actionColor={this.handleColor} actionFetch={this.fetchNewSkills} actionFillS={this.handleFillSkills} handleReset={this.handleReset} handleCollapsable={this.handleCollapsable} collapsable={collapsable} handleCollapsableFill={this.handleCollapsableFill} collapsableFill={collapsableFill} collapsableShare={collapsableShare} handleCollapsableShare={this.handleCollapsableShare}/>)} 
           />        
         </Switch>
       </React.Fragment>
