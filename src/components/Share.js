@@ -6,7 +6,7 @@ class Share extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            twitter: 'hidden',
+            twitter: 'main__share--generated hidden',
             linkTwitter: '',
             linkCard: ''
         }
