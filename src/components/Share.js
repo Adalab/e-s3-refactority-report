@@ -14,12 +14,13 @@ class Share extends Component {
     }
 
     handleShare() {
+        console.log(this.props.card);
         sendCard(this.props.card)
             .then(bonaparte => {
                 this.setState({
                     twitter: '',
-                    linkTwitter: `https://twitter.com/share?url=${bonaparte.CARDURL}&text=¡Ey! Mira que tarjeta más molona acabo de hacer con Javascript &hashtags=JavaScript, Adalab`,
-                    linkCard: bonaparte.CARDURL
+                    linkTwitter: `https://twitter.com/share?url=${bonaparte.cardURL}&text=¡Ey! Mira que tarjeta más molona acabo de hacer con Javascript &hashtags=JavaScript, Adalab`,
+                    linkCard: bonaparte.cardURL
                 })
             })
     }
@@ -47,7 +48,7 @@ class Share extends Component {
 
                 <div className={`main__share--generated ${this.state.twitter}`}>
                     <h3 className="main__share--generated-text">La tarjeta ha sido creada:</h3>
-                    <a className="main__share--generated-link"  target="_blank" href={this.state.linkCard}></a>
+                    <a className="main__share--generated-link"  target="_blank" href={this.state.linkCard}>{this.state.linkCard}</a>
 
                     <div className="main__share--twitter-button"> <span className="main__share--generated-twitter- fab fa-twitter"></span>
 

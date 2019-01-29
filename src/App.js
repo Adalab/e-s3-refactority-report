@@ -14,14 +14,14 @@ class App extends Component {
       card: {
         name: 'Nombre Apellido',
         job: 'front-end developer',
-        image: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT",
+        image: 'https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT',
         email: '',
         tel:'',
         linkedin:'',
         git:'',
         typography: 2,
         palette: 1,
-        skills: [],
+        skills: []
       },
       
       collapsable: 'main__design--container hidden',
