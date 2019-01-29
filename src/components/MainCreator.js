@@ -20,7 +20,7 @@ class MainCreator extends Component {
                         <div className="border-section border-section-nomargin"></div>
                         <Fill actionName={actionName} valueName={valueName} actionJob={actionJob} valueJob={valueJob} arraySkills={arraySkills} actionEmail={actionEmail} actionTel={actionTel} actionLinkedin={actionLinkedin} actionGit={actionGit} card={card} imageDefault={imageDefault} handleUrl={handleUrl} actionFetch={actionFetch} actionFillS={actionFillS}  handleCollapsableFill={handleCollapsableFill} collapsableFill={collapsableFill}/>
                         <div className="border-section border-section-nomargin"></div>
-                        <Share handleCollapsableShare={handleCollapsableShare} collapsableShare={collapsableShare}/>
+                        <Share card={card} handleCollapsableShare={handleCollapsableShare} collapsableShare={collapsableShare}/>
                     </form>
                 </div>
             </main>
