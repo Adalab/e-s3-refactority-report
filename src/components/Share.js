@@ -6,7 +6,7 @@ class Share extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            twitter: 'twitter',
+            twitter: 'hidden',
             linkTwitter: '',
             linkCard: ''
         }
@@ -18,7 +18,7 @@ class Share extends Component {
         sendCard(this.props.card)
             .then(bonaparte => {
                 this.setState({
-                    twitter: 'on',
+                    twitter: 'main__share--generated',
                     linkTwitter: `https://twitter.com/share?url=${bonaparte.CARDURL}&text=¡Ey! Mira que tarjeta más molona acabo de hacer con Javascript &hashtags=JavaScript, Adalab`,
                     linkCard: bonaparte.CARDURL
                 })
@@ -47,7 +47,7 @@ class Share extends Component {
                 </div>
                 <div className="border-section"></div>
 
-                <div className="main__share--generated">
+                <div className={`${this.state.twitter}`}>
                     <h3 className="main__share--generated-text">La tarjeta ha sido creada:</h3>
                     <a className="main__share--generated-link"  target="_blank" href={this.state.linkCard}></a>
 
