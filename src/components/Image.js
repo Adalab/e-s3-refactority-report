@@ -32,7 +32,7 @@ class Image extends Component {
         if(par){
             return {backgroundImage: `url()`}
         } else {
-            return {backgroundImage: `url(${this.props.card.image})`}
+            return {backgroundImage: `url(${this.props.card.photo})`}
         }
     }
     render() {

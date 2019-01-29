@@ -14,13 +14,13 @@ class App extends Component {
       card: {
         name: 'Nombre Apellido',
         job: 'front-end developer',
-        image: 'https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT',
+        photo: 'https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT',
         email: '',
-        tel:'',
+        phone:'',
         linkedin:'',
-        git:'',
-        typography: 2,
+        github:'',
         palette: 1,
+        typography: 2,
         skills: []
       },
       
@@ -72,9 +72,6 @@ class App extends Component {
         return '';
       }
     }
-  
-    
-    
 
 handleName(e) {
   const name = e.currentTarget.value;
@@ -151,7 +148,6 @@ handleSkills(e) {
 handleFillSkills (e) {
   const skill = e.target.value;
   const {card} = this.state;
-
   let skillsSelected = this.state.card.skills;
 
   if (skillsSelected.length < 3 && e.target.checked === true) {
@@ -165,8 +161,6 @@ handleFillSkills (e) {
   } else if (skillsSelected.length>=3 && !(skillsSelected.includes(skill))) {
     e.target.checked = false;
   }
-
-
   this.setState({
     card: {...card, skills : skillsSelected}
   });
@@ -189,7 +183,6 @@ handleColor(e){
 }
 
 handleCollapsable(){
-    
   if (this.state.collapsable.includes('hidden')){
     this.setState({
       collapsable: 'main__design--container'
@@ -202,7 +195,6 @@ handleCollapsable(){
 }
 
 handleCollapsableFill(){
-    
   if (this.state.collapsableFill.includes('hidden')){
     this.setState({
       collapsableFill: 'main__fill--container'
@@ -214,8 +206,7 @@ handleCollapsableFill(){
   }
 }
 
-handleCollapsableShare(){
-    
+handleCollapsableShare(){  
   if (this.state.collapsableShare.includes('hidden')){
     this.setState({
       collapsableShare: 'main__share--container'
@@ -233,13 +224,13 @@ handleReset() {
   const defaultCard = {
       name: 'Nombre Apellido',
       job: 'front-end developer',
-      image: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT",
+      photo: "https://placehold.it/200x200/ffcc00/0000ff/?text=TEXT",
       email: '',
-      tel:'',
+      phone:'',
       linkedin:'',
-      git:'',
-      typography: 2,
+      github:'',
       palette: 1,
+      typography: 2,
       skills: []
     };
 

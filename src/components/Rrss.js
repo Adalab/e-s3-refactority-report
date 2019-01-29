@@ -10,13 +10,13 @@ class Rrss extends Component {
                         id="email" type="email" name="email" value={card.email} />
                     <label htmlFor="phone">Teléfono</label>
                     <input className="input-container" placeholder="Ej: 666-55-44-33" onChange={actionTel}
-                        id="phone" type="number" name="phone" value={card.tel} />
+                        id="phone" type="number" name="phone" value={card.phone} />
                     <label htmlFor="linkedin">Linkedin</label>
                     <input className="input-container" placeholder="Ej: linkedin.com/in/paqui.ram" onChange={actionLinkedin}
                         id="linkedin" type="text" name="linkedin" value={card.linkedin} />
                     <label htmlFor="github">Github</label>
                     <input className="input-container" placeholder="Ej: @paqui-ram" onChange={actionGit}
-                        id="github" type="text" name="github" value={card.git} />
+                        id="github" type="text" name="github" value={card.github} />
             </React.Fragment>
         );
     }

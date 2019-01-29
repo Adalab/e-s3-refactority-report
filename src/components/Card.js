@@ -100,9 +100,9 @@ class Card extends Component {
                 <div className="preview__image" style={{backgroundImage: `url(${card.image})`}}></div>
                 <ul className="preview__social-icons">
                     {this.writeEmailIcon(card.email)}
-                    {this.writeTelIcon(card.tel)}
+                    {this.writeTelIcon(card.phone)}
                     {this.writeLinkedinIcon(card.linkedin)}
-                    {this.writeGitIcon(card.git)}
+                    {this.writeGitIcon(card.github)}
                 </ul>
                 <div className="skills__container">
                     <ul className={`icons__container icons__container--green preview__skills-icons`}>
