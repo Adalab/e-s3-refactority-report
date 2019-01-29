@@ -92,7 +92,7 @@ handleJob(e) {
 handleUrl(url) {
   const {card} = this.state;
   this.setState({
-    card:{...card, image: url},
+    card:{...card, photo: url},
     imageDefault: false
   });
 }
@@ -109,10 +109,10 @@ handleTel(e) {
   const tel = e.currentTarget.value;
   const {card} = this.state;
   this.setState({
-    card: {...card, tel: tel }
+    card: {...card, phone: tel }
   });
 }
-
+tel
 handleLinkedin(e) {
   const linkedin = e.currentTarget.value;
   const {card} = this.state;
@@ -125,7 +125,7 @@ handleGit(e) {
   const git = e.currentTarget.value;
   const {card} = this.state;
   this.setState({
-    card: {...card, git: git }
+    card: {...card, github: git }
   });
 }
 

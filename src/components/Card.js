@@ -97,7 +97,7 @@ class Card extends Component {
                         <p className={`${fonts[card.typography]} preview__occupation`}>{card.job}</p>
                     </div>
                 </div>
-                <div className="preview__image" style={{backgroundImage: `url(${card.image})`}}></div>
+                <div className="preview__image" style={{backgroundImage: `url(${card.photo})`}}></div>
                 <ul className="preview__social-icons">
                     {this.writeEmailIcon(card.email)}
                     {this.writeTelIcon(card.phone)}
